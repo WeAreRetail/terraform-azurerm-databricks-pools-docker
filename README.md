@@ -12,19 +12,26 @@
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
-| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | >=3.11.0 |
+| <a name="requirement_azurecaf"></a> [azurecaf](#requirement\_azurecaf) | >= 1.2.16 |
+| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | >= 3.0.2 |
+| <a name="requirement_databricks"></a> [databricks](#requirement\_databricks) | >= 1.0.0 |
 
 #### Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_disaster_recovery"></a> [disaster\_recovery](#input\_disaster\_recovery) | To return the resource in the correct region | `bool` | n/a | yes |
+| <a name="input_databricks_version"></a> [databricks\_version](#input\_databricks\_version) | The preloaded Databricks version. | `string` | n/a | yes |
+| <a name="input_docker_image_url"></a> [docker\_image\_url](#input\_docker\_image\_url) | The Docker image URL | `string` | n/a | yes |
+| <a name="input_docker_spn_client_id"></a> [docker\_spn\_client\_id](#input\_docker\_spn\_client\_id) | The SPN client id for ACR authentication | `string` | n/a | yes |
+| <a name="input_docker_spn_client_secret"></a> [docker\_spn\_client\_secret](#input\_docker\_spn\_client\_secret) | The SPN client secret for ACR authentication | `string` | n/a | yes |
+| <a name="input_environment"></a> [environment](#input\_environment) | The environment trigram. | `string` | n/a | yes |
+| <a name="input_spot_pool_name"></a> [spot\_pool\_name](#input\_spot\_pool\_name) | The spot pool name. | `string` | n/a | yes |
+| <a name="input_warm_pool_name"></a> [warm\_pool\_name](#input\_warm\_pool\_name) | The warm pool name. | `string` | n/a | yes |
 
 #### Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_ids"></a> [ids](#output\_ids) | The IDs of the subnets in the current region. |
-| <a name="output_ids_sql"></a> [ids\_sql](#output\_ids\_sql) | The IDs of the subnets for SQL. |
-| <a name="output_ids_storage"></a> [ids\_storage](#output\_ids\_storage) | The IDs of the subnets for Storage. |
+| <a name="output_pool_spot_id"></a> [pool\_spot\_id](#output\_pool\_spot\_id) | n/a |
+| <a name="output_pool_warm_id"></a> [pool\_warm\_id](#output\_pool\_warm\_id) | n/a |
 <!-- END_TF_DOCS -->
