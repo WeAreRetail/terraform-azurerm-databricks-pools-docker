@@ -1,12 +1,8 @@
-locals {
-  production = var.environment == "PRD" || var.environment == "PRE"
-}
-
 resource "databricks_instance_pool" "spot_pool" {
   instance_pool_name = var.spot_pool_name
   min_idle_instances = 0
-  max_capacity       = local.production ? 60 : 16
-  node_type_id       = "Standard_DS3_v2"
+  max_capacity       = var.spot_pool_max_capacity
+  node_type_id       = var.spot_pool_sku
 
   preloaded_docker_image {
     url = var.docker_image_url
@@ -31,8 +27,8 @@ resource "databricks_instance_pool" "spot_pool" {
 resource "databricks_instance_pool" "warm_pool" {
   instance_pool_name = var.warm_pool_name
   min_idle_instances = 0
-  max_capacity       = local.production ? 60 : 16
-  node_type_id       = local.production ? "Standard_DS4_v2" : "Standard_DS3_v2"
+  max_capacity       = var.warm_pool_max_capacity
+  node_type_id       = var.warm_pool_sku
 
   preloaded_docker_image {
     url = var.docker_image_url

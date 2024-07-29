@@ -18,14 +18,9 @@ variable "docker_spn_client_secret" {
   description = "The SPN client secret for ACR authentication"
 }
 
-variable "environment" {
-  type        = string
-  description = "The environment trigram."
-
-  validation {
-    condition     = upper(var.environment) == var.environment
-    error_message = "The environment must be uppercase."
-  }
+variable "spot_pool_max_capacity" {
+  type        = number
+  description = "The maximum number of instances the pool can contain for the spot pool."
 }
 
 variable "spot_pool_name" {
@@ -33,7 +28,22 @@ variable "spot_pool_name" {
   description = "The spot pool name."
 }
 
+variable "spot_pool_sku" {
+  type        = string
+  description = "The spot pool SKU (ex: Standard_DS3_v2)."
+}
+
+variable "warm_pool_max_capacity" {
+  type        = number
+  description = "The maximum number of instances the pool can contain for the warm pool."
+}
+
 variable "warm_pool_name" {
   type        = string
   description = "The warm pool name."
+}
+
+variable "warm_pool_sku" {
+  type        = string
+  description = "The warm pool SKU (ex: Standard_DS3_v2)."
 }

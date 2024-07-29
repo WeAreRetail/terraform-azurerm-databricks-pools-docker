@@ -24,9 +24,12 @@
 | <a name="input_docker_image_url"></a> [docker\_image\_url](#input\_docker\_image\_url) | The Docker image URL | `string` | n/a | yes |
 | <a name="input_docker_spn_client_id"></a> [docker\_spn\_client\_id](#input\_docker\_spn\_client\_id) | The SPN client id for ACR authentication | `string` | n/a | yes |
 | <a name="input_docker_spn_client_secret"></a> [docker\_spn\_client\_secret](#input\_docker\_spn\_client\_secret) | The SPN client secret for ACR authentication | `string` | n/a | yes |
-| <a name="input_environment"></a> [environment](#input\_environment) | The environment trigram. | `string` | n/a | yes |
+| <a name="input_spot_pool_max_capacity"></a> [spot\_pool\_max\_capacity](#input\_spot\_pool\_max\_capacity) | The maximum number of instances the pool can contain for the spot pool. | `number` | n/a | yes |
 | <a name="input_spot_pool_name"></a> [spot\_pool\_name](#input\_spot\_pool\_name) | The spot pool name. | `string` | n/a | yes |
+| <a name="input_spot_pool_sku"></a> [spot\_pool\_sku](#input\_spot\_pool\_sku) | The spot pool SKU (ex: Standard\_DS3\_v2). | `string` | n/a | yes |
+| <a name="input_warm_pool_max_capacity"></a> [warm\_pool\_max\_capacity](#input\_warm\_pool\_max\_capacity) | The maximum number of instances the pool can contain for the warm pool. | `number` | n/a | yes |
 | <a name="input_warm_pool_name"></a> [warm\_pool\_name](#input\_warm\_pool\_name) | The warm pool name. | `string` | n/a | yes |
+| <a name="input_warm_pool_sku"></a> [warm\_pool\_sku](#input\_warm\_pool\_sku) | The warm pool SKU (ex: Standard\_DS3\_v2). | `string` | n/a | yes |
 
 #### Outputs
 
