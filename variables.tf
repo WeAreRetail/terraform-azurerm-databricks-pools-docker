@@ -47,3 +47,47 @@ variable "warm_pool_sku" {
   type        = string
   description = "The warm pool SKU (ex: Standard_DS3_v2)."
 }
+
+variable "spot_pool_idle_instance_autotermination_minutes" {
+  type        = number
+  description = "Minutes an idle instance of the spot pool is kept before termination (10 to 10080). Idle spot instances cost VM time only, no DBU."
+  default     = 10
+
+  validation {
+    condition     = var.spot_pool_idle_instance_autotermination_minutes >= 10 && var.spot_pool_idle_instance_autotermination_minutes <= 10080
+    error_message = "spot_pool_idle_instance_autotermination_minutes must be between 10 and 10080."
+  }
+}
+
+variable "spot_pool_min_idle_instances" {
+  type        = number
+  description = "Number of instances of the spot pool kept idle (warm) at all times. Must be >= 0."
+  default     = 0
+
+  validation {
+    condition     = var.spot_pool_min_idle_instances >= 0
+    error_message = "spot_pool_min_idle_instances must be >= 0."
+  }
+}
+
+variable "warm_pool_idle_instance_autotermination_minutes" {
+  type        = number
+  description = "Minutes an idle instance of the warm pool is kept before termination (10 to 10080). Idle on-demand instances cost VM time only, no DBU."
+  default     = 10
+
+  validation {
+    condition     = var.warm_pool_idle_instance_autotermination_minutes >= 10 && var.warm_pool_idle_instance_autotermination_minutes <= 10080
+    error_message = "warm_pool_idle_instance_autotermination_minutes must be between 10 and 10080."
+  }
+}
+
+variable "warm_pool_min_idle_instances" {
+  type        = number
+  description = "Number of instances of the warm pool kept idle (warm) at all times. Must be >= 0."
+  default     = 0
+
+  validation {
+    condition     = var.warm_pool_min_idle_instances >= 0
+    error_message = "warm_pool_min_idle_instances must be >= 0."
+  }
+}

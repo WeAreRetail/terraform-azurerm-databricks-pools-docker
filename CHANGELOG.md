@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.0] - 2026-10-07
+
+### Added
+
+- Variables `spot_pool_idle_instance_autotermination_minutes` and `warm_pool_idle_instance_autotermination_minutes` (default 10, between 10 and 10080).
+- Variables `spot_pool_min_idle_instances` and `warm_pool_min_idle_instances` (default 0, at least 0).
+- Defaults keep the previous hard-coded values, so existing consumers are unaffected.
+
 ## [2.0.0] - 2024-26-07
 
 ### Deleted

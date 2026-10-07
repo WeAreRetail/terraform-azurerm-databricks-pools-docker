@@ -1,6 +1,6 @@
 resource "databricks_instance_pool" "spot_pool" {
   instance_pool_name = var.spot_pool_name
-  min_idle_instances = 0
+  min_idle_instances = var.spot_pool_min_idle_instances
   max_capacity       = var.spot_pool_max_capacity
   node_type_id       = var.spot_pool_sku
 
@@ -17,7 +17,7 @@ resource "databricks_instance_pool" "spot_pool" {
     spot_bid_max_price = -1
   }
 
-  idle_instance_autotermination_minutes = 10
+  idle_instance_autotermination_minutes = var.spot_pool_idle_instance_autotermination_minutes
   preloaded_spark_versions              = [var.databricks_version]
   custom_tags = {
     "D_CATEGORY" = "backfill"
@@ -26,7 +26,7 @@ resource "databricks_instance_pool" "spot_pool" {
 
 resource "databricks_instance_pool" "warm_pool" {
   instance_pool_name = var.warm_pool_name
-  min_idle_instances = 0
+  min_idle_instances = var.warm_pool_min_idle_instances
   max_capacity       = var.warm_pool_max_capacity
   node_type_id       = var.warm_pool_sku
 
@@ -42,7 +42,7 @@ resource "databricks_instance_pool" "warm_pool" {
     availability       = "ON_DEMAND_AZURE"
     spot_bid_max_price = 0
   }
-  idle_instance_autotermination_minutes = 10
+  idle_instance_autotermination_minutes = var.warm_pool_idle_instance_autotermination_minutes
   preloaded_spark_versions              = [var.databricks_version]
   custom_tags = {
     "D_CATEGORY" = "live"

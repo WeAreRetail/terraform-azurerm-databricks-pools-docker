@@ -30,6 +30,10 @@
 | <a name="input_warm_pool_max_capacity"></a> [warm\_pool\_max\_capacity](#input\_warm\_pool\_max\_capacity) | The maximum number of instances the pool can contain for the warm pool. | `number` | n/a | yes |
 | <a name="input_warm_pool_name"></a> [warm\_pool\_name](#input\_warm\_pool\_name) | The warm pool name. | `string` | n/a | yes |
 | <a name="input_warm_pool_sku"></a> [warm\_pool\_sku](#input\_warm\_pool\_sku) | The warm pool SKU (ex: Standard\_DS3\_v2). | `string` | n/a | yes |
+| <a name="input_spot_pool_idle_instance_autotermination_minutes"></a> [spot\_pool\_idle\_instance\_autotermination\_minutes](#input\_spot\_pool\_idle\_instance\_autotermination\_minutes) | Minutes an idle instance of the spot pool is kept before termination (10 to 10080). Idle spot instances cost VM time only, no DBU. | `number` | `10` | no |
+| <a name="input_spot_pool_min_idle_instances"></a> [spot\_pool\_min\_idle\_instances](#input\_spot\_pool\_min\_idle\_instances) | Number of instances of the spot pool kept idle (warm) at all times. Must be >= 0. | `number` | `0` | no |
+| <a name="input_warm_pool_idle_instance_autotermination_minutes"></a> [warm\_pool\_idle\_instance\_autotermination\_minutes](#input\_warm\_pool\_idle\_instance\_autotermination\_minutes) | Minutes an idle instance of the warm pool is kept before termination (10 to 10080). Idle on-demand instances cost VM time only, no DBU. | `number` | `10` | no |
+| <a name="input_warm_pool_min_idle_instances"></a> [warm\_pool\_min\_idle\_instances](#input\_warm\_pool\_min\_idle\_instances) | Number of instances of the warm pool kept idle (warm) at all times. Must be >= 0. | `number` | `0` | no |
 
 #### Outputs
 
