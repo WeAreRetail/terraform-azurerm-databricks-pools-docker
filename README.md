@@ -10,7 +10,7 @@
 #### Requirements
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
 | <a name="requirement_azurecaf"></a> [azurecaf](#requirement\_azurecaf) | >= 1.2.16 |
 | <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | >= 3.0.2 |
@@ -19,7 +19,7 @@
 #### Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | <a name="input_databricks_version"></a> [databricks\_version](#input\_databricks\_version) | The preloaded Databricks version. | `string` | n/a | yes |
 | <a name="input_docker_image_url"></a> [docker\_image\_url](#input\_docker\_image\_url) | The Docker image URL | `string` | n/a | yes |
 | <a name="input_docker_spn_client_id"></a> [docker\_spn\_client\_id](#input\_docker\_spn\_client\_id) | The SPN client id for ACR authentication | `string` | n/a | yes |
@@ -38,7 +38,7 @@
 #### Outputs
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | <a name="output_pool_spot_id"></a> [pool\_spot\_id](#output\_pool\_spot\_id) | n/a |
 | <a name="output_pool_warm_id"></a> [pool\_warm\_id](#output\_pool\_warm\_id) | n/a |
 <!-- END_TF_DOCS -->
